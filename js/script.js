@@ -10,10 +10,11 @@ function calculate () {
   // input
   const hours = parseInt(document.getElementById('number-of-hours-worked').value)
   const rate = parseInt(document.getElementById('hourly-rate').value)
+  const tax = 0.18;
 
   // process
-  const pay = hours * rate * 0.82
-  const taxes = hours * rate *  0.18
+  const pay = hours * rate * (1.00 - tax) 
+  const taxes = hours * rate *  tax
 
   // output
   document.getElementById('pay').innerHTML = 'Your pay will be: $' + pay.toFixed(2)
